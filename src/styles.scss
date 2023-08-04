@@ -1,19 +1,33 @@
-html,
 body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+}
+
+.black, .gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.gradient {
+  background: linear-gradient(0deg, #4a97ee, #053aad);
+  z-index: 1;
+}
+
+.black {
   background: black;
-  animation: changeBackground 2s forwards;
+  z-index: 2;
+  animation: fadeOut 2s forwards;
   animation-delay: 700ms;
 }
 
-@keyframes changeBackground {
+@keyframes fadeOut {
   0% {
-    background: black;
+    opacity: 1;
   }
   100% {
-    background: skyblue;
+    opacity: 0;
   }
 }
 
@@ -28,6 +42,7 @@ body {
   animation: moveSun 2s forwards;
   animation-delay: 700ms;
   box-shadow: 0 0 40px #ffee58;
+  z-index: 3;
   filter: blur(14px);
 }
 
@@ -48,7 +63,7 @@ body {
   position: absolute;
   left: 200px;
   top: 400px;
-  z-index: 1;
+  z-index: 3;
   animation: moveMoon 3s forwards, rotateMoon 3s forwards, dissapearMoon 1s forwards;
   animation-delay: 500ms, 800ms, 700ms;
   transform: rotate(40deg);
@@ -60,7 +75,7 @@ body {
     top: 400px;
   }
   100% {
-    left: calc(100% - 1500px);
+    left: calc(100% - 1000px);
     top: calc(100% - 1500px);
   }
 }
@@ -93,6 +108,7 @@ body {
   position: absolute;
   animation: twinkle 30ms infinite ease-in-out, removeStars 1s forwards;
   animation-delay: 0s, 700ms;
+  z-index: 3;
 }
 
 @keyframes twinkle {
@@ -109,10 +125,10 @@ body {
 
 @keyframes removeStars {
   0% {
-    background-color: white;
+    opacity: 1;
   }
 
   100% {
-    background-color: skyblue;
+    opacity: 0;
   }
 }
