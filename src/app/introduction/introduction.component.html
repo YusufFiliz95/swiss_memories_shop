@@ -1,1 +1,4 @@
-<p>introduction works!</p>
+<div class="sun"></div>
+<div class="moon"></div>
+<div *ngFor="let star of stars" class="star" [style.top]="star.top" [style.left]="star.left"></div>
+
