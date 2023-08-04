@@ -18,8 +18,8 @@ body {
 }
 
 .sun {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   background-color: lemonchiffon;
   border-radius: 50%;
   position: absolute;
@@ -45,15 +45,13 @@ body {
 .moon {
   width: 80px;
   height: 80px;
-  background-color: black;
-  border-radius: 50%;
-  box-shadow: 1rem 1rem 0 0 #ffffff;
   position: absolute;
   left: 200px;
   top: 400px;
   z-index: 1;
-  animation: moveMoon 1s forwards, changeColorMoon 2s forwards;
-  animation-delay: 500ms, 700ms;
+  animation: moveMoon 3s forwards, rotateMoon 3s forwards, dissapearMoon 1s forwards;
+  animation-delay: 500ms, 800ms, 700ms;
+  transform: rotate(40deg);
 }
 
 @keyframes moveMoon {
@@ -67,13 +65,23 @@ body {
   }
 }
 
-@keyframes changeColorMoon {
+@keyframes dissapearMoon {
   0% {
-    background-color: rgb(0, 0, 0);
+    opacity: 1;
   }
 
   100% {
-    background-color: skyblue;
+    opacity: 0;
+  }
+}
+
+@keyframes rotateMoon {
+  0% {
+    transform: rotate(40deg);
+  }
+
+  100% {
+    transform: rotate(120deg);
   }
 }
 
