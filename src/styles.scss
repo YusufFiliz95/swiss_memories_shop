@@ -4,7 +4,8 @@ body {
   overflow: hidden;
 }
 
-.black, .gradient {
+.black,
+.gradient {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -64,7 +65,8 @@ body {
   left: 200px;
   top: 400px;
   z-index: 3;
-  animation: moveMoon 3s forwards, rotateMoon 3s forwards, dissapearMoon 1s forwards;
+  animation: moveMoon 3s forwards, rotateMoon 3s forwards,
+    dissapearMoon 1s forwards;
   animation-delay: 500ms, 800ms, 700ms;
   transform: rotate(40deg);
 }
@@ -96,7 +98,7 @@ body {
   }
 
   100% {
-    transform: rotate(120deg);
+    transform: rotate(160deg);
   }
 }
 
@@ -132,3 +134,12 @@ body {
     opacity: 0;
   }
 }
+
+.mountain-flag {
+  width: 1200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+}
+
