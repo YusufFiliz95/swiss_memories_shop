@@ -141,5 +141,14 @@ body {
   bottom: 0;
   right: 0;
   z-index: 4;
+  filter: blur(1px);
 }
 
+.clouds {
+  position: absolute;
+  height: 1400px;
+  width: 100%;
+  bottom: -235px;
+  left: 0;
+  z-index: 5;
+}
