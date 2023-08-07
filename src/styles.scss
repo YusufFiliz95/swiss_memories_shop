@@ -136,19 +136,43 @@ body {
 }
 
 .mountain-flag {
-  width: 45vw;
+  width: 40vw;
   position: absolute;
-  bottom: 0;
+  bottom: -100vw;
   right: 0;
   z-index: 4;
   filter: blur(1px);
+  animation: showMountainFlag 1.3s forwards;
+  animation-delay: 2.3s;
+}
+
+@keyframes showMountainFlag {
+  0% {
+    bottom: -100vw;
+  }
+
+  100% {
+    bottom: 0;
+  }
 }
 
 .clouds {
   position: absolute;
   height: 90vw;
   width: 100vw;
-  bottom: -40vw;
+  bottom: -100vw;
   left: 0;
   z-index: 5;
+  animation: showClouds 1.2s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes showClouds {
+  0% {
+    bottom: -100vw;
+  }
+
+  100% {
+    bottom: -37vw;
+  }
 }
