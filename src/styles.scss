@@ -136,7 +136,7 @@ body {
 }
 
 .mountain-flag {
-  width: 1200px;
+  width: 45vw;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -146,9 +146,9 @@ body {
 
 .clouds {
   position: absolute;
-  height: 130%;
-  width: 100%;
-  bottom: -678px;
+  height: 90vw;
+  width: 100vw;
+  bottom: -40vw;
   left: 0;
   z-index: 5;
 }
