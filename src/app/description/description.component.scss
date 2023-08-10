@@ -1,0 +1,15 @@
+.description-section {
+  height: 150vh;
+  width: 100%;
+  background-color: #c4ccdb;
+}
+
+.description {
+  margin-top: 38vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-size: 4vw;
+  }
+}

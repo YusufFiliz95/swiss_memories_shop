@@ -1,18 +1,20 @@
-<div class="sun"></div>
-<img class="moon" src="assets/img/moon.svg">
-<div>
-    <img src="assets/img/flag_mountain.png" alt="" class="mountain-flag">
-    <img src="assets/img/cloud.png" class="clouds" alt="">
-</div>
-<div class="welcome-text">
+<div class="introduction-section">
+  <div class="sun"></div>
+  <img class="moon" src="assets/img/moon.svg">
   <div>
-    <span class="text-swiss">Swiss</span>
-    <span class="text-memories">Memories</span>
+      <img src="assets/img/flag_mountain.png" alt="" class="mountain-flag">
+      <img src="assets/img/cloud.png" class="clouds" alt="">
   </div>
-  <div class="scroll-down">
+  <div class="welcome-text">
+    <div>
+      <span class="text-swiss">Swiss</span>
+      <span class="text-memories">Memories</span>
+    </div>
+    <div class="scroll-down">
 
+    </div>
   </div>
+  <div class="gradient"></div>
+  <div class="black"></div>
+  <div *ngFor="let star of stars" class="star" [style.top]="star.top" [style.left]="star.left"></div>
 </div>
-<div class="gradient"></div>
-<div class="black"></div>
-<div *ngFor="let star of stars" class="star" [style.top]="star.top" [style.left]="star.left"></div>

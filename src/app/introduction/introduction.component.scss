@@ -1,3 +1,8 @@
+.introduction-section {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .black,
 .gradient {
   position: absolute;
@@ -153,9 +158,8 @@
 .clouds {
   position: absolute;
   height: 80vw;
-  width: 100vw;
+  width: 100%;
   bottom: -100vw;
-  left: 0;
   z-index: 5;
   animation: showClouds 1.2s forwards;
   animation-delay: 2s;
@@ -167,7 +171,7 @@
   }
 
   100% {
-    bottom: -30vw;
+    bottom: -37vw;
   }
 }
 
@@ -183,9 +187,8 @@
   left: 17vw;
   top: 5vw;
   font-size: 5vw;
-  font-family: 'Borel', cursive;
+  font-family: "Borel", cursive;
   text-shadow: 5px 5px #000000;
-
 
   color: white;
   & div {
@@ -194,14 +197,33 @@
     align-items: flex-start;
     justify-content: center;
 
+    span {
+      display: inline-block; /* Damit die transform-Eigenschaft angewendet werden kann */
+      transform: translateX(-100%); /* Setzen Sie es außerhalb des sichtbaren Bereichs */
+      opacity: 0; /* Unsichtbar am Anfang */
+      animation: slideInFromLeft 1s forwards; /* 3 Sekunden Dauer */
+    }
+
     .text-swiss {
       margin-top: 4vw;
+      animation-delay: 3s;
     }
 
     .text-memories {
       margin-top: -5vw;
       margin-left: 8vw;
+      animation-delay: 3.4s;
     }
+  }
+}
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
