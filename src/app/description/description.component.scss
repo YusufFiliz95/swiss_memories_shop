@@ -1,16 +1,60 @@
 .description-section {
   height: 150vh;
   width: 100%;
-  background-color: #c4ccdb;
+  background-color: #dce5f5;
+}
+
+.mountain {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .description {
-  margin-top: 38vw;
+  margin-top: 40vw;
   position: absolute;
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
+  align-items: flex-end;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  div {
+    border-left: 32px solid #a37755;
+    margin-bottom: 32px;
+    box-shadow: -9px 10px 9px -1px rgba(0,0,0,0.44);
+-webkit-box-shadow: -9px 10px 9px -1px rgba(0,0,0,0.44);
+-moz-box-shadow: -9px 10px 9px -1px rgba(0,0,0,0.44);
+  }
+
   h1 {
-    font-size: 4vw;
+    font-size: 3vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .title {
+    width: 60%;
+    text-align: center;
+    padding: 12px;
+    padding-left: 32px;
+    padding-right: 32px;
+    background-color: white;
+  }
+
+  .description1 {
+    width: 60%;
+    padding: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    background-color: white;
+    text-align: justify;
   }
 }
