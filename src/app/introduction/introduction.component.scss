@@ -32,25 +32,32 @@
 }
 
 .sun {
+  overflow-x: hidden;
   width: 110px;
   height: 110px;
   background-color: lemonchiffon;
   border-radius: 50%;
   position: absolute;
-  right: -100px;
-  bottom: -100px;
+  right: 0px;
+  bottom: 0px;
   animation: moveSun 2s forwards;
   animation-delay: 700ms;
   box-shadow: 0 0 40px #ffee58;
-  z-index: 3;
+  z-index: 2;
   filter: blur(14px);
 }
 
 @keyframes moveSun {
   0% {
-    right: -100px;
-    bottom: -100px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0;
   }
+
+  50% {
+    opacity: 1;
+  }
+
   100% {
     right: calc(100% - 150px);
     bottom: calc(100% - 150px);
@@ -142,7 +149,7 @@
   z-index: 4;
   filter: blur(1px);
   animation: showMountainFlag 1.3s forwards;
-  animation-delay: 2.3s;
+  animation-delay: 1.2s;
 }
 
 @keyframes showMountainFlag {
@@ -162,7 +169,7 @@
   bottom: -100vw;
   z-index: 5;
   animation: showClouds 1.2s forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 @keyframes showClouds {
@@ -198,21 +205,20 @@
     justify-content: center;
 
     span {
-      display: inline-block; /* Damit die transform-Eigenschaft angewendet werden kann */
-      transform: translateX(-100%); /* Setzen Sie es außerhalb des sichtbaren Bereichs */
-      opacity: 0; /* Unsichtbar am Anfang */
-      animation: slideInFromLeft 1s forwards; /* 3 Sekunden Dauer */
+      transform: translateX(-100%);
+      opacity: 0;
+      animation: slideInFromLeft 1200ms forwards;
     }
 
     .text-swiss {
       margin-top: 4vw;
-      animation-delay: 3s;
+      animation-delay: 2s;
     }
 
     .text-memories {
       margin-top: -5vw;
       margin-left: 8vw;
-      animation-delay: 3.4s;
+      animation-delay: 2.2s;
     }
   }
 }
