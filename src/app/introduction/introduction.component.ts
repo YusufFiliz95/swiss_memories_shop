@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-introduction',
   templateUrl: './introduction.component.html',
   styleUrls: ['./introduction.component.scss']
 })
-export class IntroductionComponent {
+export class IntroductionComponent implements AfterViewInit {
   stars: any[] = [];
 
-  constructor() {
+  constructor(private renderer: Renderer2, private el: ElementRef) {
     this.createStars(100);
+  }
+
+  ngAfterViewInit() {
+    // Stellen Sie sicher, dass die Seite von oben startet
+    window.scrollTo(0, 0);
+
+    // Scrollen deaktivieren
+    this.renderer.setStyle(this.el.nativeElement.ownerDocument.body, 'overflow', 'hidden');
+
+    // Scrollen nach 2 Sekunden wieder aktivieren
+    setTimeout(() => {
+      this.renderer.setStyle(this.el.nativeElement.ownerDocument.body, 'overflow', 'auto');
+    }, 3500);
   }
 
   createStars(count: number) {
