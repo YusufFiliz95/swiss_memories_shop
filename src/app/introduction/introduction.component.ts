@@ -3,7 +3,7 @@ import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
 @Component({
   selector: 'app-introduction',
   templateUrl: './introduction.component.html',
-  styleUrls: ['./introduction.component.scss']
+  styleUrls: ['./introduction.component.scss'],
 })
 export class IntroductionComponent implements AfterViewInit {
   stars: any[] = [];
@@ -13,16 +13,19 @@ export class IntroductionComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Stellen Sie sicher, dass die Seite von oben startet
-    window.scrollTo(0, 0);
+/*     this.renderer.setStyle(
+      this.el.nativeElement.ownerDocument.body,
+      'overflow',
+      'hidden'
+    ); */
 
-    // Scrollen deaktivieren
-    this.renderer.setStyle(this.el.nativeElement.ownerDocument.body, 'overflow', 'hidden');
-
-    // Scrollen nach 2 Sekunden wieder aktivieren
-    setTimeout(() => {
-      this.renderer.setStyle(this.el.nativeElement.ownerDocument.body, 'overflow', 'auto');
-    }, 3500);
+/*     setTimeout(() => {
+      this.renderer.setStyle(
+        this.el.nativeElement.ownerDocument.body,
+        'overflow',
+        'auto'
+      );
+    }, 3500); */
   }
 
   createStars(count: number) {
@@ -30,7 +33,7 @@ export class IntroductionComponent implements AfterViewInit {
       this.stars.push({
         id: i,
         top: this.randomPosition(),
-        left: this.randomPosition()
+        left: this.randomPosition(),
       });
     }
   }
